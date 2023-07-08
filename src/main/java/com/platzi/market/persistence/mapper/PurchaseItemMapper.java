@@ -18,6 +18,7 @@ public interface PurchaseItemMapper {
     PurchaseItem toPurchaseItem(ComprasProducto producto);
 
     @InheritInverseConfiguration
+    // Debo ignorar los campos que no se mapean, porque si no, me da error
     @Mappings({
             @Mapping(target = "compra", ignore = true),
             @Mapping(target = "producto", ignore = true),
